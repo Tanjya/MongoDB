@@ -15,7 +15,7 @@ app.get("/Books", (req, res) => {
   let info = [];
   db.collection("Books")
     .find()
-    .sort({ age: 1 })
+    .sort({ age: -1 })
     .forEach((existingBook) => info.push(existingBook))
     .then(() => {
       res.status(200).json(info);
